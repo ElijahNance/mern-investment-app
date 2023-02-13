@@ -2,6 +2,8 @@
   {
     "username": "testuser",
     "email": "test@user.com",
-    "password": "password1234"
+    "password": "password1234",
+    "stocks": [{ "stockName" : "stock1", "price": "25", "shares": 1 }, 
+      { "stockName" : "stock2", "price": "25", "shares": 1 }]
   }
 ]

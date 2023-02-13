@@ -61,8 +61,30 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
-    }
-  }
-};
+    },
+    addStock: async (_parent, { userID, stockId, stockName, price, shares }, context) => {
+         if (context.user) {
+          return await User.findOneAndUpdate(
+            { _id: userID },
+            { 
+              $addToSet: { stocks : { stockId: stockId, stockName: stockName, price: price, shares: shares } }
+             },
+             {
+              new: true
+             }
+          )
+        }
+    },
+    removeStock: async (_parent, { userID, stockId }, context) => {
+      // if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: userID },
+          { $pull: { stocks : { stockId: stockId} } },
+          {new: true }
+        )
+      }
+    //}
+}
+}
 
 module.exports = resolvers;
