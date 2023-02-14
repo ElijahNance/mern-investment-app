@@ -13,20 +13,20 @@ const User = ({ _id, username }) => {
   );
 };
 
-const UserList = ({ users, title }) => {
-  if (!users.length) return <h3>No Users</h3>;
+// const UserList = ({ users, title }) => {
+//   if (!users.length) return <h3>No Users</h3>;
 
-  const renderUsers = () => {
-    if (!users) return null;
-    return users.map(user => <User key={user._id} {...user} />);
-  }
+  // const renderUsers = () => {
+  //   if (!users) return null;
+  //   return users.map(user => <User key={user._id} {...user} />);
+  // }
 
-  return (
-    <>
-      <h3>{title}</h3>
-      {renderUsers()}
-    </>
-  );
-};
+//   return (
+//     <>
+//       <h3>{title}</h3>
+//       {renderUsers()}
+//     </>
+//   );
+// };
 
-export default UserList;
+// export default UserList;

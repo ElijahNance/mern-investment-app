@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth';
 import { QUERY_USERS, QUERY_USER, QUERY_ME } from '../utils/queries';
 // Components
-import UserList from '../components/UserList';
+// import UserList from '../components/UserList';
 
 const Profile = () => {
   const { id } = useParams();
@@ -42,12 +42,12 @@ const Profile = () => {
     );
   }
 
-  const renderUserList = () => {
-    if (usersLoading) return null;
-    // Only renders users who's profile we're not currently viewing
-    const notMeUsers = users.filter(o => o._id !== user._id);
-    return <UserList users={notMeUsers} title="User List" />;
-  };
+  // const renderUserList = () => {
+  //   if (usersLoading) return null;
+  //   // Only renders users who's profile we're not currently viewing
+  //   const notMeUsers = users.filter(o => o._id !== user._id);
+  //   return <UserList users={notMeUsers} title="User List" />;
+  // };
 
   const renderCurrentUserInfo = () => {
     if (id) return null;
@@ -66,7 +66,7 @@ const Profile = () => {
           Viewing {id ? `${user.username}'s` : 'your'} profile.
         </h2>
         {renderCurrentUserInfo()}
-        {renderUserList()}
+        {/* {renderUserList()} */}
       </div>
     </div>
   );
