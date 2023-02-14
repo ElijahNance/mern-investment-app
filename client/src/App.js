@@ -12,6 +12,9 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
+import About from './pages/About';
+import Purchase from './pages/Purchase';
+import Confirm from './pages/Confirm';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -49,6 +52,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/purchase" element={<Purchase />} />
+            <Route path="/confirm" element={<Confirm />} />
             <Route path="/me" element={<Profile />} />
             <Route path="/users/:id" element={<Profile />} />
           </Routes>
