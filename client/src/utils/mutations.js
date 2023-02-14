@@ -23,3 +23,32 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_STOCK = gql`
+mutation addStock($stockId: ID!, $stockName: String!, $price: String!, $shares: Int!, $userID: ID) {
+  addStock(stockId: $stockId, stockName: $stockName, price: $price, shares: $shares, userID: $userID) {
+    stocks {
+      price
+      shares
+      stockId
+      stockName
+    }
+    username
+  }
+}
+`
+
+export const REMOVE_STOCK = gql`
+mutation removeStock($userID: ID!, $stockId: ID!) {
+  removeStock(userID: $userID, stockId: $stockId) {
+    username
+    stocks {
+      stockName
+      stockId
+      shares
+      price
+    }
+    _id
+  }
+}
+`

@@ -6,6 +6,14 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    stocks: [Stock]
+  }
+
+  type Stock {
+    stockId: String
+    stockName: String
+    price: String
+    shares: Int
   }
 
   type Auth {
@@ -23,6 +31,8 @@ const typeDefs = gql`
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
+    addStock(userID: ID, stockId: ID!, stockName: String!, price: String!, shares: Int!): User
+    removeStock(userID:ID!, stockId: ID!): User
   }
 `;
 
