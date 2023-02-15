@@ -1,0 +1,77 @@
+.renderForm {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+}
+
+.form {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    display: inline;
+}
+
+.username {
+    display: flex;
+    justify-content: center;
+    display: inline-flexbox;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    /* padding: 1em; */
+    text-align: center;
+}
+
+.email {
+    display: flex;
+    justify-content: center;
+    display: inline;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    /* padding: 1em; */
+    text-align: center;
+}
+
+.password {
+    display: flex;
+    justify-content: center;
+    display: inline;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    /* padding: 1em; */
+    text-align: center;
+}
+
+.submit {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    display: inline;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    /* padding: 1em; */
+    text-align: center;
+}
+
+.submit:hover {
+    filter: drop-shadow(0 0 2em #5960f6aa);
+}
+
+h4.renderForm {
+    display: block;
+    color: pink;
+    padding: 1em;
+    text-align: center;
+}
+
+div.renderForm {
+    display: block;
+    color: pink;
+    padding: 1em;
+    text-align: center;
+}
