@@ -5,6 +5,13 @@ import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
+import './Signup.css';
+
+const styles = {
+  form: {
+    display:'flex'
+  }
+}
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -47,13 +54,14 @@ const Signup = () => {
       )
     } 
     return (
-      <form onSubmit={handleFormSubmit}>
+      <form style={styles.form} onSubmit={handleFormSubmit} className="form">
         <input
           placeholder="Your username"
           name="username"
           type="text"
           value={formState.name}
           onChange={handleChange}
+          className="username"
         />
         <input
           placeholder="Your email"
@@ -61,6 +69,7 @@ const Signup = () => {
           type="email"
           value={formState.email}
           onChange={handleChange}
+          className="email"
         />
         <input
           placeholder="******"
@@ -68,8 +77,9 @@ const Signup = () => {
           type="password"
           value={formState.password}
           onChange={handleChange}
+          className="password"
         />
-        <button type="submit">
+        <button type="submit" className='submit'>
           Submit
         </button>
       </form>
@@ -78,7 +88,7 @@ const Signup = () => {
 
   return (
     <main>
-      <h4>Sign Up</h4>
+      <h4 className='text-center'>Sign Up</h4>
       <div>
         {renderForm()}
         {error && <div>{error.message}</div>}

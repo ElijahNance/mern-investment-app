@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import './Login.css';
 
 import Auth from '../utils/auth';
 
@@ -56,13 +57,14 @@ const Login = () => {
     // }
     return (
       <div >
-      <form style={styles.form} onSubmit={handleFormSubmit}>
+      <form style={styles.form} onSubmit={handleFormSubmit} className="form">
         <input
           placeholder="Your email"
           name="email"
           type="email"
           value={formState.email}
           onChange={handleChange}
+          className="email"
         />
         <input
           placeholder="******"
@@ -70,8 +72,9 @@ const Login = () => {
           type="password"
           value={formState.password}
           onChange={handleChange}
+          className="password"
         />
-        <button type="submit">
+        <button type="submit" className='submit'>
           Submit
         </button>
       </form>
