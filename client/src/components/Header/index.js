@@ -1,18 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../Navbar';
+import Navigation from '../Navbar';
+import Logo from '../Header/logo_black.png';
+
+const styles = {
+  p: {
+      fontSize: 20
+  }
+}
 
 const Header = () => {
   return (
     <header>
-      <div>
+      <div className='text-center'>
         <Link to="/">
-          <h1>Centaur Investments</h1>
+          {/* <h1 className='text-center'>Centaur Investments</h1> */}
+          <img src={Logo}></img>
         </Link>
       </div>
       <div>
-        <p>A Curated Investing Experience</p>
-        <Navbar />
+        <p className='text-center' style={styles.p}>A Curated Investing Experience</p>
+        <Navigation />
       </div>
     </header>
   );

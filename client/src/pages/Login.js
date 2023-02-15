@@ -5,6 +5,12 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+const styles = {
+  form: {
+    display:'flex'
+  }
+}
+
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -40,16 +46,17 @@ const Login = () => {
   };
 
   const renderForm = () => {
-    if (data) {
-      return (
-        <p>
-          Success! You may now head{' '}
-          <Link to="/">back to the homepage.</Link>
-        </p>
-      )
-    }
+    // if (data) {
+    //   return (
+    //     <p>
+    //       Success! You may now head{' '}
+    //       <Link to="/">back to the homepage.</Link>
+    //     </p>
+    //   )
+    // }
     return (
-      <form onSubmit={handleFormSubmit}>
+      <div >
+      <form style={styles.form} onSubmit={handleFormSubmit}>
         <input
           placeholder="Your email"
           name="email"
@@ -68,12 +75,13 @@ const Login = () => {
           Submit
         </button>
       </form>
+      </div>
     );
   };
 
   return (
     <main>
-      <h4>Login</h4>
+      <h3 className='text-center'>Login</h3>
       <div>
         {renderForm()}
         {error && <div>{error.message}</div>}
