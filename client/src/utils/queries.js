@@ -21,8 +21,8 @@ export const SEARCH_USERS = gql`
 `;
 
 export const QUERY_USER = gql`
-  query user($id: ID!) {
-    user(id: $id) {
+  query user {
+    user {
       _id
       username
       email
@@ -31,8 +31,8 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_USER_STOCKS = gql`
-  query user($id: ID!) {
-    user(id: $id) {
+  query user {
+    user {
       _id
       stocks {
         price

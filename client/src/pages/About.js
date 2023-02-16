@@ -20,7 +20,7 @@ return (
         </header>
         <div className="d-flex justify-content-right">
         <img src={Cash} className="rounded float-right img-fluid" style={styles.img}></img>
-        <p className="container-md mt-4 text-right" style={styles.p}>Investing in stocks can seem a little overwhelming. Centaur Investments was created to make it simple! With an easy-to-use interface, users can create an account and immediately start browsing available stocks to purchase. A ready-made portfolio with all shares and associated stocks they’ve invested in is then created for review. We take the complexity into our own hands to make the profits come easy. Get started today!</p>
+        <p className="container-md mt-4 text-right" style={styles.p}>Established in 2023, three broders decided they wanted a better app to invest into stocks with. After nights of frustration and sacrifice, they created Centaur. With live updates on the hottest stocks and an easy-to-use interface, users can create an account and immediately start browsing available stocks to purchase. A ready-made portfolio with all shares and associated stocks they’ve invested in is then created for review. We take the complexity into our own hands to make the profits come easy. Get started today!</p>
         </div>
         
     </div>

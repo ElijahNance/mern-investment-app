@@ -25,8 +25,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_STOCK = gql`
-mutation addStock($stockId: ID!, $stockName: String!, $price: String!, $shares: Int!, $userID: ID) {
-  addStock(stockId: $stockId, stockName: $stockName, price: $price, shares: $shares, userID: $userID) {
+mutation addStock($stockId: ID!, $stockName: String!, $price: String!, $shares: Int!) {
+  addStock(stockId: $stockId, stockName: $stockName, price: $price, shares: $shares) {
     stocks {
       price
       shares
