@@ -25,7 +25,7 @@ function Navigation() {
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="nav nav-tabs me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+              <li className="nav-item">
                 <a className="nav-link" aria-selected="false"><Link to='/' style={styles.a}>Home</Link></a>
               </li>
               <li className="nav-item active">
@@ -35,7 +35,7 @@ function Navigation() {
                 <a className="nav-link" aria-selected="true"><Link to='/about' style={styles.a}>About</Link></a>
               </li>
             </ul>
-            <span className="nav-link" onClick={logout}> 
+            <span className="nav-link" onClick={logout}>
               <Link to='/' style={styles.a}>Log Out</Link>
             </span>
           </div>
@@ -46,26 +46,29 @@ function Navigation() {
   // If logged out show login controls
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#"><Link to="/" style={styles.a}>Welcome!</Link></a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="nav nav-tabs">
-        <li className="nav-item active">
-          <a className="nav-link"><Link to="/login" style={styles.a}>Login</Link></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link"><Link to="/signup" style={styles.a}>Signup</Link></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link"><Link to="/about" style={styles.a}>About</Link></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <div className="container-fluid">
+        <a className="navbar-brand" href="#"><Link to="/" style={styles.a}>Welcome!</Link></a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="nav nav-tabs">
+            <li className="nav-item">
+              <a className="nav-link" aria-selected="false"><Link to='/' style={styles.a}>Home</Link></a>
+            </li>
+            <li className="nav-item active">
+              <a className="nav-link"><Link to="/login" style={styles.a}>Login</Link></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link"><Link to="/signup" style={styles.a}>Signup</Link></a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link"><Link to="/about" style={styles.a}>About</Link></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   )
 }
 

@@ -28,8 +28,9 @@ const resolvers = {
     users: async () => {
       return User.find();
     },
-    user: async (_, args) => {
-      return User.findOne({ _id: args.id });
+    user: async (_, args,context) => {
+      if(!context.user) throw new AuthenticationError('You must be logged in to view your stocks');
+      return User.findOne({ _id: context.user._id });
     },
     me: async (_, _args, context) => {
       if (context.user) {
@@ -63,9 +64,9 @@ const resolvers = {
       return { token, user };
     },
     addStock: async (_parent, { userID, stockId, stockName, price, shares }, context) => {
-        //if (context.user) {
+        if (context.user) {
           return await User.findOneAndUpdate(
-            { _id: userID },
+            { _id: context.user._id },
             { 
               $addToSet: { stocks : { stockId: stockId, stockName: stockName, price: price, shares: shares } }
              },
@@ -73,7 +74,10 @@ const resolvers = {
               new: true
              }
           )
-        //}
+        }
+        else {
+          throw new AuthenticationError('You must be logged in to add a stock')
+        }
     },
     removeStock: async (_parent, { userID, stockId }, context) => {
        //if (context.user) {

@@ -3,6 +3,12 @@ import getHTTPData from '../../utils/SvcClient';
 import { useMutation } from '@apollo/client';
 import { ADD_STOCK } from '../../utils/mutations';
 
+const styles = {
+    h3: {
+        marginTop: '3%'
+    }
+}
+
 function PurchaseConfirm({ stockSymbol, numShares }) {
 
     
@@ -20,6 +26,7 @@ function PurchaseConfirm({ stockSymbol, numShares }) {
 
     const [svcData, setSvcData] = useState([]);
     const [warningMessage, setWarningMessage] = useState("");
+    const [confirmMessage, setConfirmMessage] = useState("");
 
     const [addStock, {data, error}] = useMutation(ADD_STOCK);
 
@@ -52,6 +59,7 @@ function PurchaseConfirm({ stockSymbol, numShares }) {
         }
         else {
             setWarningMessage("");
+            setConfirmMessage("Return to the Home Page to see your stock!");
         }
 
         console.log("Running Stock Mutation");
@@ -61,8 +69,7 @@ function PurchaseConfirm({ stockSymbol, numShares }) {
                 "stockId": "685",
                 "stockName": stockSymbol,  
                 "price": svcData.trade.p.toString(),
-                "shares": parseInt(numShares.toString()),
-                "userID": "63eba8944b5d01625fe12ca1" //Cannot figure out where to get this from
+                "shares": parseInt(numShares.toString())
             }
         })
 
@@ -77,10 +84,11 @@ function PurchaseConfirm({ stockSymbol, numShares }) {
             <h3 className='text-center'>Confirm Purchase</h3>
             <p>Stock Symbol: {svcData.symbol}</p>
             <p>Number of Shares: {typeof svcData.trade !== "undefined" ? numShares : ""}</p>
-            <p>Price Per Share: {typeof svcData.trade !== "undefined" ? svcData.trade.p : ""}</p>
-            <p>Total Purchase Cost: {typeof svcData.trade !== "undefined" ? (svcData.trade.p * numShares) : ""}</p>
+            <p>Price Per Share: {typeof svcData.trade !== "undefined" ? svcData.trade.p.toFixed(2) : ""}</p>
+            <p>Total Purchase Cost: {typeof svcData.trade !== "undefined" ? (svcData.trade.p * numShares).toFixed(2) : ""}</p>
             <p>{warningMessage}</p>
             <button className="form-control bg-success-subtle" onClick={completePurchase}>Complete Purchase</button>
+            <h3 className='text-center' style={styles.h3}>{confirmMessage}</h3>
         </>
     );
 

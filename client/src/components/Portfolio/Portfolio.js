@@ -4,11 +4,7 @@ import { QUERY_USER_STOCKS } from '../../utils/queries';
 
 function Portfolio() {
 
-    const {loading, error, data, refetch} = useQuery(QUERY_USER_STOCKS, {
-        variables: {
-            "id": "63eba8944b5d01625fe12ca1" //Cannot figure out where to get this from
-        }
-    });
+    const {loading, error, data, refetch} = useQuery(QUERY_USER_STOCKS);
 
     if (loading) return 'Loading...';
     if(error) return `Error! ${error.message}`;

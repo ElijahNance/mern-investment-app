@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div>
         <div className="container">
-        <footer className="text-center text-black fixed-bottom" style={styles.footer}>
+        <footer className="text-center text-black sticky-bottom" style={styles.footer}>
           <section className="mt-5">
 
             <div className="row text-center d-flex justify-content-center pt-5">

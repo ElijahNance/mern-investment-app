@@ -8,7 +8,7 @@ import Auth from '../utils/auth';
 
 const styles = {
   form: {
-    display:'flex'
+    display: 'flex'
   }
 }
 
