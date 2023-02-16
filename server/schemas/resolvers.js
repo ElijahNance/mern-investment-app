@@ -63,7 +63,7 @@ const resolvers = {
       return { token, user };
     },
     addStock: async (_parent, { userID, stockId, stockName, price, shares }, context) => {
-          if (context.user) {
+        //if (context.user) {
           return await User.findOneAndUpdate(
             { _id: userID },
             { 
@@ -73,7 +73,7 @@ const resolvers = {
               new: true
              }
           )
-        }
+        //}
     },
     removeStock: async (_parent, { userID, stockId }, context) => {
        //if (context.user) {
@@ -82,8 +82,8 @@ const resolvers = {
           { $pull: { stocks : { stockId: stockId} } },
           {new: true }
         )
-      }
-   // }
+      //}
+    }
 }
 }
 

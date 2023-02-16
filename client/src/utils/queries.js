@@ -30,6 +30,20 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_USER_STOCKS = gql`
+  query user($id: ID!) {
+    user(id: $id) {
+      _id
+      stocks {
+        price
+        shares
+        stockId
+        stockName
+      }
+    }
+  }
+`;
+
 export const QUERY_ME = gql`
   query me {
     me {

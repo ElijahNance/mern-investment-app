@@ -58,7 +58,7 @@ function App() {
             <Route path="/me" element={<Profile />} />
             <Route path="/users/:id" element={<Profile />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </>
       </Router>
     </ApolloProvider>
