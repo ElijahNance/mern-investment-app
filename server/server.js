@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors');
+
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
@@ -12,6 +14,11 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use(require('./controllers/'));
+console.log('Before CORS');
+app.use(cors({origin: '*'}));
+console.log('After CORS');
 
 // Create a new instance of an Apollo server with the GraphQL schema
 (async () => {

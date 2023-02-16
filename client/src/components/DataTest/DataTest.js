@@ -2,7 +2,7 @@
 import {useState, useEffect} from 'react';
 import getHTTPData from '../../utils/SvcClient';
 
-function DataTest({svcEndpoint, svcParms, svcConfig}) {
+function DataTest({svcEndpoint, svcParms, svcConfig, numShares}) {
 
     const [svcData, setSvcData] = useState([]);
 
@@ -10,7 +10,7 @@ function DataTest({svcEndpoint, svcParms, svcConfig}) {
         async function fetchData(svcUrl, svcParms, svcConfig) {
             if(svcUrl.length > 0){
                 const response = await getHTTPData(svcUrl, svcParms, svcConfig);
-                setSvcData(response);
+                setSvcData([response]);
             };
         };
 
@@ -37,10 +37,11 @@ function DataTest({svcEndpoint, svcParms, svcConfig}) {
         <table>
             <tbody>
                 {svcData.map(rec =>
-                    <tr key={rec.id}>
-                        <td>User ID:</td><td>{rec.id}</td>
-                        <td>Title:</td><td>{rec.title}</td>
-                        <td>Completed:</td><td>{rec.completed}</td>
+                    <tr key={1}>
+                        <td>Stock Symbol:</td><td>{rec.symbol}</td>
+                        <td>Stock Price:</td><td>{rec.trade.p}</td>
+                        <td>Requested Shares:</td><td>{numShares}</td>
+                        <td>Purchase Price:</td><td>{(numShares * rec.trade.p).toFixed(2)}</td>
                     </tr>)}
             </tbody>
         </table>

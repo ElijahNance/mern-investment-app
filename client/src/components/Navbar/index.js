@@ -24,15 +24,15 @@ function Navigation() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page"><Link to='/purchase' style={styles.a}>Purchase</Link></a>
+            <ul className="nav nav-tabs me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+                <a className="nav-link" aria-selected="false"><Link to='/' style={styles.a}>Home</Link></a>
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link" aria-current="page" aria-selected="false"><Link to='/purchase' style={styles.a}>Purchase</Link></a>
               </li>
               <li className="nav-item">
-                <a className="nav-link"><Link to='/about' style={styles.a}>About</Link></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link"><Link to='/me' style={styles.a}>Profile</Link></a>
+                <a className="nav-link" aria-selected="true"><Link to='/about' style={styles.a}>About</Link></a>
               </li>
             </ul>
             <span className="nav-link" onClick={logout}> 
@@ -52,8 +52,8 @@ function Navigation() {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
+      <ul className="nav nav-tabs">
+        <li className="nav-item active">
           <a className="nav-link"><Link to="/login" style={styles.a}>Login</Link></a>
         </li>
         <li className="nav-item">
