@@ -9,10 +9,6 @@ function Portfolio() {
     if (loading) return 'Loading...';
     if(error) return `Error! ${error.message}`;
 
-    console.log("Returned Data", data);
-    // let keys = Object.keys(data.user.stocks);
-    // console.log(keys);
-    // console.log("user", data.user);
 
     //Run a second fetch to refresh the screen with new purchases when component is rendered
     const refreshView = () => refetch();

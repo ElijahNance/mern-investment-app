@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const getData = require('../../utils/alpaca');
 
-// get all posts for homepage
+// Express route to talk to Alpaca
 router.get('/stockprice', (req, res) => {
   console.log(req.query.stocksymbol);
 

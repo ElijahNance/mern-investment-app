@@ -14,7 +14,6 @@ const Header = () => {
     <header>
       <div className='text-center'>
         <Link to="/">
-          {/* <h1 className='text-center'>Centaur Investments</h1> */}
           <img src={Logo}></img>
         </Link>
       </div>

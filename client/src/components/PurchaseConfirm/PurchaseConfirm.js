@@ -11,12 +11,8 @@ const styles = {
 
 function PurchaseConfirm({ stockSymbol, numShares }) {
 
-    
-    
-    //const baseUrl = "http://localhost:3001";
     const baseUrl=window.location.href.split("/purchase")[0];
     const svcEndpoint = baseUrl + "/api/stockprice?stocksymbol=" + stockSymbol;
-    console.log("Service Endpoint:", svcEndpoint);
 
     const svcParms = null;
     const svcConfig = {
@@ -34,7 +30,6 @@ function PurchaseConfirm({ stockSymbol, numShares }) {
         async function fetchData(svcUrl, svcParms, svcConfig) {
             if (svcUrl.length > 0) {
                 const response = await getHTTPData(svcUrl, svcParms, svcConfig);
-                console.log("Service Data", response);
                 setSvcData(response);
             };
         };
@@ -45,7 +40,6 @@ function PurchaseConfirm({ stockSymbol, numShares }) {
     )
 
     const completePurchase = () => {
-        console.log("Stock Symbol before confirm", stockSymbol);
 
         if (typeof stockSymbol === "undefined" || stockSymbol.trim().toLowerCase() === "select a stock" || stockSymbol==="") {
             console.log("No Stock To Purchase");
@@ -62,7 +56,6 @@ function PurchaseConfirm({ stockSymbol, numShares }) {
             setConfirmMessage("Return to the Home Page to see your stock!");
         }
 
-        console.log("Running Stock Mutation");
 
         addStock({
             variables: {
@@ -72,8 +65,7 @@ function PurchaseConfirm({ stockSymbol, numShares }) {
                 "shares": parseInt(numShares.toString())
             }
         })
-
-        console.log("Stock Mutation Ran");
+        
         console.log(error);
 
 
