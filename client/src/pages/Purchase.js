@@ -17,23 +17,15 @@ function Purchase() {
         stockSymbol = inputStockSymbol.current.value;
         numShares = inputNumShares.current.value;
 
-        console.log("Stock Symbol", stockSymbol);
-        console.log("Number of Shares", numShares);
-
         if (stockSymbol.trim().toLowerCase() === "select a stock") {
-            console.log("No Stock");
             return;
         }
         else if (numShares === 0 || numShares === "") {
-            console.log("No Shares");
             return;
         }
 
         setStockSymbolState(stockSymbol);
         setNumSharesState(numShares);
-
-        console.log(inputStockSymbol.current.value, stockSymbol, stockSymbolState);
-        console.log(inputNumShares.current.value, numShares, numSharesState);
 
     };
 
